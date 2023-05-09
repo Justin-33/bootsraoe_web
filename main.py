@@ -17,12 +17,12 @@ def home():
     return render_template("index.html", msg_sent=False)
 
 
-# def send_email(name, email, phone, message):
-#     email_message = f"Subject:New Message\n\nName: {name}\nEmail: {email}\nPhone: {phone}\nMessage:{message}"
-#     with smtplib.SMTP("smtp.gmail.com") as connection:
-#         connection.starttls()
-#         connection.login(MY_GMAIL, PASSWORD)
-#         connection.sendmail(MY_GMAIL, MY_GMAIL, email_message)
+def send_email(name, email, phone, message):
+    email_message = f"Subject:New Message\n\nName: {name}\nEmail: {email}\nPhone: {phone}\nMessage:{message}"
+    with smtplib.SMTP("smtp.gmail.com") as connection:
+        connection.starttls()
+        connection.login(MY_GMAIL, PASSWORD)
+        connection.sendmail(MY_GMAIL, MY_GMAIL, email_message)
 
 
 if __name__=="__main__":
